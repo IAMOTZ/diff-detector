@@ -12,7 +12,7 @@ You need to have the following intalled on your machine:
 - Git
 - Node
 
-#### Installation
+#### Installing
 
 - Clone this repsitory
 - Change into the root directory of the project
@@ -24,9 +24,17 @@ You need to have the following intalled on your machine:
 - Visit the url the app launches, by default it should be `http://localhost:3000`
 - Use the `Register GitHub App` button on the page that loads to register the GitHub app and then install it in any of **your** repository.
 
+### Configuring
+There is a `diffConfig.json` file at the root folder of the project, this is the file that can be used to configure the files this app would
+check in every PR and the message to respond with if any of the file changes.  
+The `diffConfig.json` file is such that it exports a `config` array, each object in that array is a configuration with a `path` and `message` property.  
+The `path` property is an array listing all the paths to check, the `message` property is a string specifying the message to post as comment.  
+You can check the sample configuration in `diffConfig.json.sample` for guide on how to write your own configuration.
+
 ## Testing
-@TODO: I should add instructions on how to test the app  
-@TODO: I should add instructions on how to customize the files to check and the message to respond with.
+- After setting up the project with the instructions above
+- Open a pull request on any of the github repository you've installed the app
+- If you've modified and of the files in the path configured in the `diffConfig.json`, the message attached to that path should be posted as comment in the PR.
 
 ## Note on Deploying
 When deploying, the `WEBHOOK_PROXY_URL` should point to the url the project would be deployed and not the url from smee.io.
