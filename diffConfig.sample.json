@@ -1,0 +1,11 @@
+{
+  "config": [
+    {
+      "path": [
+        "src/common/",
+        "src/components/"
+      ],
+      "message": "File changes detected in the following folders: \n```\n src/common/\n src/components/ \n```\n Please do whatever is necessary..."
+    }
+  ]
+}
