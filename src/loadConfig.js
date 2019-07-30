@@ -15,7 +15,7 @@ config.forEach((config, index) => {
     else return;
     if(message && message.constructor.name === 'String') {
       messages.push(message);
-      paths.forEach(path => pathToMessageIndex[path] = index);
+      path.forEach(path => pathToMessageIndex[path] = index);
     }
     // @todo: Handle case of config with valid path without valid message
   }
